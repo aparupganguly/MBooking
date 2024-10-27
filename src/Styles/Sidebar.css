@@ -1,0 +1,53 @@
+.custom-sidebar {
+  width: 250px; /* Adjust width as needed */
+  background-color: transparent; /* No background color */
+  color: gray; /* Default text color */
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  justify-content: flex-start; /* Align items to the top */
+  height: 100vh; /* Make sidebar full height */
+}
+
+.menu-item {
+  display: flex;
+  align-items: center; /* Center items vertically */
+  padding: 10px 15px; /* Adjust padding for menu items */
+  cursor: pointer; /* Change cursor to pointer */
+  transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.submenu-item {
+  padding: 10px 0; /* Padding for submenu items */
+  cursor: pointer; /* Change cursor to pointer */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.menu-item:hover {
+  color: #4F55F1; /* Highlight color on hover */
+}
+
+.submenu {
+  max-height: 0; /* Initial height */
+  overflow: hidden; /* Hide overflow */
+  transition: max-height 0.3s ease; /* Smooth transition */
+  padding-left: 15px; /* Indent submenu items */
+}
+
+.submenu.open {
+  max-height: 200px; /* Set a max height when open (adjust as necessary) */
+  transition: max-height 0.3s ease; /* Ensure the transition applies */
+}
+
+.submenu-item {
+  padding: 10px 0; /* Padding for submenu items */
+  cursor: pointer; /* Change cursor to pointer */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.submenu-item:hover {
+  color: #4F55F1; /* Highlight color on hover */
+}
+
+.sideText {
+  padding-left: 10px; /* Space between icon and text */
+}

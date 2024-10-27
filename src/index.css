@@ -1,3 +1,29 @@
 body {
   font-family: "Helvetica";
 }
+.app-container {
+  display: flex; /* Use flexbox for the main layout */
+  flex-direction: column; /* Stack Navbar and main container vertically */
+  height: 100vh; /* Full viewport height */
+}
+
+.main-container {
+  display: flex; /* Align Sidebar and content in a row */
+  flex: 1; /* Take remaining space */
+}
+
+.custom-sidebar {
+  width: 250px; /* Fixed width for sidebar */
+  background-color: #f8f9fa; /* Example background color */
+  color: gray; /* Default text color */
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  justify-content: flex-start; /* Align items to the top */
+  height: 100%; /* Full height of parent */
+}
+
+.content {
+  flex: 1; /* Take remaining space next to the sidebar */
+  padding: 20px; /* Add padding for content */
+  background-color: white; /* Example background color */
+}
