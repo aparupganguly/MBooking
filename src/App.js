@@ -1,13 +1,25 @@
 import React from 'react';
-import Test from './Components/Test';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './Components/Navbar/Navbar';
 import SidebarComp from './Components/SideBar/Sidebar';
 import Heading from './Components/MainDashBoard/Heading';
-import Analytics from './Components/MainDashBoard/Analytics';
 import NumericStats from './Components/MainDashBoard/NumericStats';
+import Analytics from './Components/MainDashBoard/Analytics';
 import List from './Components/MainDashBoard/List';
+import EventDetail from './Components/MainDashBoard/EventDetail';
 
 const App = () => {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<MainLayout />} />
+        <Route path="/event/:eventName" element={<EventDetail />} /> {/* Dynamic route for event details */}
+      </Routes>
+    </Router>
+  );
+};
+
+const MainLayout = () => {
   return (
     <div className="app-container">
       <Navbar />
@@ -18,7 +30,6 @@ const App = () => {
           <NumericStats />
           <Analytics />
           <List />
-          {/* Render other components here, like <Test /> */}
         </div>
       </div>
     </div>
