@@ -5,7 +5,6 @@ import SidebarComp from './Components/SideBar/Sidebar';
 import Heading from './Components/MainDashBoard/Heading';
 import Analytics from './Components/MainDashBoard/Analytics';
 import NumericStats from './Components/MainDashBoard/NumericStats';
-import Earnings from './Components/MainDashBoard/Earnings';
 import List from './Components/MainDashBoard/List';
 
 const App = () => {
@@ -18,7 +17,6 @@ const App = () => {
           <Heading />
           <NumericStats />
           <Analytics />
-          <Earnings />
           <List />
           {/* Render other components here, like <Test /> */}
         </div>
