@@ -84,7 +84,7 @@ const List = () => {
                 </td>
                 <td>
                   <div style={{ position: "relative" }}>
-                    <button onClick={() => toggleDropdown(booking.id)}>⋮</button>
+                    <button onClick={() => toggleDropdown(booking.id)}>•••</button>
                     {dropdownOpen[booking.id] && (
                       <div className="dropdown">
                         <button onClick={() => handleDelete(booking.id)}>Delete</button>

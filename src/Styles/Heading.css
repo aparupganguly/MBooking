@@ -2,9 +2,12 @@
   font-size: 2em;
   line-height: 0;
   color: #313338;
+  font-family: "Poppins-Medium";
+  padding-bottom: 0.5em;
 }
 .userGuidelineText {
   font-size: 1em;
   line-height: 0;
   color: #7c8db5;
+  padding-bottom: 0.5em;
 }

@@ -131,18 +131,24 @@
   border: 1px solid var(--Border, #e6edff);
 }
 
-.earnings-section h2 {
+/* .earnings-section h2 {
   font-size: 20px;
   font-weight: 600;
   color: #333;
   margin: 0 0 24px 0;
-}
+} */
 
 .earnings-circle {
   position: relative;
   width: 100%;
-  max-width: 200px;
+  /* max-width: 200px; */
   margin: 0 auto;
+}
+
+.earningsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .earnings-circle svg {
@@ -156,7 +162,10 @@
 }
 
 .legend {
-  margin-top: 24px;
+  margin-top: 5em;
+  display: flex;
+  gap: 1em;
+  justify-content: center;
 }
 
 .legend-item {
@@ -225,11 +234,11 @@
 }
 
 .circle-online.animate {
-  animation: drawCircle 1.5s ease-out 0.3s forwards;
+  animation: drawCircle 1.5s ease-out 0.8s forwards;
 }
 
 .circle-offline.animate {
-  animation: drawCircle 1.5s ease-out 0.6s forwards;
+  animation: drawCircle 1.5s ease-out 0.9s forwards;
 }
 
 @keyframes drawCircle {
