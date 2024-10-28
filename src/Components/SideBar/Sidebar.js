@@ -2,105 +2,83 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faCog, faChartSimple, faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import '../../Styles/Sidebar.css';
+import { gsap } from 'gsap';
 
 const SidebarComp = () => {
-  const [activeMenu, setActiveMenu] = useState('overview'); // Track active menu item
-  const [openSubmenu, setOpenSubmenu] = useState(null); // Track which submenu is open
+  const [activeMenu, setActiveMenu] = useState('overview');
+  const [openSubmenu, setOpenSubmenu] = useState(null);
 
   const handleMenuClick = (menu) => {
     setActiveMenu(menu);
     if (menu === openSubmenu) {
-      setOpenSubmenu(null); // Close the submenu if it's already open
+      setOpenSubmenu(null);
     } else {
-      setOpenSubmenu(menu); // Open the clicked submenu
+      setOpenSubmenu(menu);
     }
+  };
+
+  const handleMouseEnter = (e) => {
+    gsap.to(e.currentTarget, { scale: 1.05, duration: 0.2 });
+  };
+
+  const handleMouseLeave = (e) => {
+    gsap.to(e.currentTarget, { scale: 1, duration: 0.2 });
   };
 
   return (
     <div className="custom-sidebar">
-      <div
-        className="menu-item"
-        onClick={() => handleMenuClick('overview')}
-        style={{ color: activeMenu === 'overview' ? '#4F55F1' : 'gray' }}
-      >
-        <FontAwesomeIcon icon={faChartSimple} style={{ color: activeMenu === 'overview' ? '#4F55F1' : 'gray' }} />
-        <span className="sideText">Overview</span>
-      </div>
-      <div
-        className="menu-item"
-        onClick={() => handleMenuClick('product')}
-        style={{ color: activeMenu === 'product' ? '#4F55F1' : 'gray' }}
-      >
-        <FontAwesomeIcon icon={faUser} style={{ color: activeMenu === 'product' ? '#4F55F1' : 'gray' }} />
-        <span className="sideText">Product</span>
-        <FontAwesomeIcon
-          icon={openSubmenu === 'product' ? faChevronUp : faChevronDown}
-          style={{ marginLeft: 'auto', color: activeMenu === 'product' ? '#4F55F1' : 'gray' }}
-        />
-      </div>
-      <div
-        className={`submenu ${openSubmenu === 'product' ? 'open' : ''}`} // Add 'open' class for CSS transition
-      >
-        <div
-          className="submenu-item"
-          onClick={() => handleMenuClick('addProduct')}
-          style={{ color: activeMenu === 'addProduct' ? '#4F55F1' : 'gray' }}
-        >
-          Add Product
-        </div>
-        <div
-          className="submenu-item"
-          onClick={() => handleMenuClick('viewProducts')}
-          style={{ color: activeMenu === 'viewProducts' ? '#4F55F1' : 'gray' }}
-        >
-          View Products
-        </div>
-      </div>
-      <div
-        className="menu-item"
-        onClick={() => handleMenuClick('orders')}
-        style={{ color: activeMenu === 'orders' ? '#4F55F1' : 'gray' }}
-      >
-        <FontAwesomeIcon icon={faCog} style={{ color: activeMenu === 'orders' ? '#4F55F1' : 'gray' }} />
-        <span className="sideText">Orders</span>
-        <FontAwesomeIcon
-          icon={openSubmenu === 'orders' ? faChevronUp : faChevronDown}
-          style={{ marginLeft: 'auto', color: activeMenu === 'orders' ? '#4F55F1' : 'gray' }}
-        />
-      </div>
-      <div
-        className={`submenu ${openSubmenu === 'orders' ? 'open' : ''}`} // Add 'open' class for CSS transition
-      >
-        <div
-          className="submenu-item"
-          onClick={() => handleMenuClick('pendingOrders')}
-          style={{ color: activeMenu === 'pendingOrders' ? '#4F55F1' : 'gray' }}
-        >
-          Pending Orders
-        </div>
-        <div
-          className="submenu-item"
-          onClick={() => handleMenuClick('completedOrders')}
-          style={{ color: activeMenu === 'completedOrders' ? '#4F55F1' : 'gray' }}
-        >
-          Completed Orders
-        </div>
-      </div>
-      <div
-        className="menu-item"
-        onClick={() => handleMenuClick('checkout')}
-        style={{ color: activeMenu === 'checkout' ? '#4F55F1' : 'gray' }}
-      >
-        <FontAwesomeIcon icon={faCog} style={{ color: activeMenu === 'checkout' ? '#4F55F1' : 'gray' }} />
-        <span className="sideText">Checkout</span>
-      </div>
-      <div
-        className="menu-item"
-        onClick={() => handleMenuClick('settings')}
-        style={{ color: activeMenu === 'settings' ? '#4F55F1' : 'gray' }}
-      >
-        <FontAwesomeIcon icon={faCog} style={{ color: activeMenu === 'settings' ? '#4F55F1' : 'gray' }} />
-        <span className="sideText">Settings</span>
+      <div className="line" />
+      <div className="menu-items">
+        {['overview', 'product', 'orders', 'checkout', 'settings'].map((item) => (
+          <React.Fragment key={item}>
+            <div
+              className="menu-item"
+              onClick={() => handleMenuClick(item)}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+              style={{ color: activeMenu === item ? '#4F55F1' : 'gray' }}
+            >
+              <FontAwesomeIcon
+              className="fa-icon"
+                icon={item === 'checkout' || item === 'settings' ? faCog : faChartSimple}
+                style={{ color: activeMenu === item ? '#4F55F1' : 'gray' }}
+              />
+              <span className="sideText">{item.charAt(0).toUpperCase() + item.slice(1)}</span>
+              {item === 'product' || item === 'orders' ? (
+                <FontAwesomeIcon
+                className="fa-icon"
+                  icon={openSubmenu === item ? faChevronUp : faChevronDown}
+                  style={{ marginLeft: 'auto', color: activeMenu === item ? '#4F55F1' : 'gray' }}
+                />
+              ) : null}
+            </div>
+
+            {openSubmenu === item && (item === 'product' || item === 'orders') && (
+              <div className="submenu open">
+                {item === 'product' && (
+                  <>
+                    <div className="submenu-item" onClick={() => handleMenuClick('addProduct')}>
+                      Add Product
+                    </div>
+                    <div className="submenu-item" onClick={() => handleMenuClick('viewProducts')}>
+                      View Products
+                    </div>
+                  </>
+                )}
+                {item === 'orders' && (
+                  <>
+                    <div className="submenu-item" onClick={() => handleMenuClick('pendingOrders')}>
+                      Pending Orders
+                    </div>
+                    <div className="submenu-item" onClick={() => handleMenuClick('completedOrders')}>
+                      Completed Orders
+                    </div>
+                  </>
+                )}
+              </div>
+            )}
+          </React.Fragment>
+        ))}
       </div>
     </div>
   );

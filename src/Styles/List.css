@@ -1,7 +1,8 @@
-
-
 .list-component {
   margin-top: 2rem;
+  border-radius: 10px;
+  border: 1px solid var(--Border, #e6edff);
+  padding: 20px;
 }
 
 table {
@@ -10,7 +11,8 @@ table {
   margin-bottom: 2rem;
 }
 
-th, td {
+th,
+td {
   padding: 12px;
   text-align: left;
   border-bottom: 1px solid #ddd;
@@ -46,18 +48,6 @@ td {
 }
 
 /* Button Styles */
-button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #0056b3;
-}
 
 /* Status Indicator Styles */
 .status-indicator {
@@ -70,4 +60,5 @@ button:hover {
   height: 10px;
   border-radius: 50%;
   margin-right: 0.5rem;
+  
 }

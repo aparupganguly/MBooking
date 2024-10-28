@@ -1,249 +1,266 @@
 .analytics-container {
-    display: flex;
-    gap: 24px;
-    padding: 24px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  }
-  
-  .chart-section {
-    flex: 1;
-    animation: fadeIn 0.8s ease-out;
-  }
-  
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 24px;
-  }
-  
-  .header h2 {
-    font-size: 20px;
-    font-weight: 600;
-    color: #333;
-    margin: 0;
-  }
-  
-  .controls {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-  }
-  
-  .legend-container {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  
-  .legend-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    display: inline-block;
-  }
-  
-  .legend-dot.offline { background: #0066ff; }
-  .legend-dot.online { background: #ff9933; }
-  
-  .period-selector select {
-    padding: 6px 12px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    background: white;
-    color: #333;
-  }
-  
-  .more-options {
-    border: none;
-    background: none;
-    font-size: 20px;
-    color: #666;
-    cursor: pointer;
-  }
-  
-  .selected-value {
-    margin-bottom: 24px;
-  }
-  
-  .date {
-    color: #666;
-    font-size: 14px;
-  }
-  
-  .amount {
-    font-size: 24px;
-    font-weight: 600;
-    color: #333;
-  }
-  
-  /* Chart Container */
-  .chart-container {
-    position: relative;
-  }
-  
-  /* Custom Tooltip */
-  .custom-tooltip {
-    background: white;
-    border-radius: 4px;
-    padding: 8px 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    border: 1px solid #f0f0f0;
-  }
-  
-  .tooltip-date {
-    color: #666;
-    font-size: 12px;
-    margin: 0;
-  }
-  
-  .tooltip-price {
-    color: #333;
-    font-size: 16px;
-    font-weight: 600;
-    margin: 4px 0 0 0;
-  }
-  
-  /* Hover Bar */
-  .hover-bar {
+  display: flex;
+  gap: 24px;
+  background: transparent;
+  border-radius: 12px;
+}
+
+.chart-section {
+  flex: 1;
+  animation: fadeIn 0.8s ease-out;
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid var(--Border, #e6edff);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.header h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.legend-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.legend-dot.offline {
+  background: #0066ff;
+}
+.legend-dot.online {
+  background: #ff9933;
+}
+
+.period-selector select {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  height: 30px;
+  width: 8em;
+  color: #333;
+  font-family: "Poppins-Regular";
+}
+
+.more-options {
+  border: none;
+  background: none;
+  font-size: 20px;
+  color: #666;
+  cursor: pointer;
+}
+
+.selected-value {
+  margin-bottom: 24px;
+}
+
+.date {
+  color: #666;
+  font-size: 14px;
+}
+
+.amount {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Chart Container */
+.chart-container {
+  position: relative;
+}
+
+/* Custom Tooltip */
+.custom-tooltip {
+  background: white;
+  border-radius: 4px;
+  padding: 8px 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #f0f0f0;
+}
+
+.tooltip-date {
+  color: #666;
+  font-size: 12px;
+  margin: 0;
+}
+
+.tooltip-price {
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 4px 0 0 0;
+}
+
+/* Hover Bar */
+.hover-bar {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.recharts-active-dot .hover-bar {
+  opacity: 1;
+}
+
+/* Earnings Section */
+.earnings-section {
+  width: 300px;
+  animation: slideIn 0.8s ease-out;
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid var(--Border, #e6edff);
+}
+
+.earnings-section h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 24px 0;
+}
+
+.earnings-circle {
+  position: relative;
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+.earnings-circle svg {
+  transform: rotate(-90deg);
+}
+
+.circle-trade,
+.circle-online,
+.circle-offline {
+  transition: stroke-dashoffset 1.5s ease-in-out;
+}
+
+.legend {
+  margin-top: 24px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.dot.offline {
+  background: #33cc33;
+}
+.dot.online {
+  background: #ff9933;
+}
+.dot.trade {
+  background: #0066ff;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
     opacity: 0;
-    transition: opacity 0.2s ease;
+    transform: translateY(20px);
   }
-  
-  .recharts-active-dot .hover-bar {
+  to {
     opacity: 1;
+    transform: translateY(0);
   }
-  
-  /* Earnings Section */
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-line {
+  animation: drawLine 1.5s ease-out forwards;
+}
+
+@keyframes drawLine {
+  from {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 0;
+  }
+}
+
+.circle-trade.animate {
+  animation: drawCircle 1.5s ease-out forwards;
+}
+
+.circle-online.animate {
+  animation: drawCircle 1.5s ease-out 0.3s forwards;
+}
+
+.circle-offline.animate {
+  animation: drawCircle 1.5s ease-out 0.6s forwards;
+}
+
+@keyframes drawCircle {
+  from {
+    stroke-dashoffset: 502;
+  }
+  to {
+    stroke-dashoffset: var(--final-offset, 100);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .analytics-container {
+    flex-direction: column;
+  }
+
   .earnings-section {
-    width: 300px;
-    animation: slideIn 0.8s ease-out;
-  }
-  
-  .earnings-section h2 {
-    font-size: 20px;
-    font-weight: 600;
-    color: #333;
-    margin: 0 0 24px 0;
-  }
-  
-  .earnings-circle {
-    position: relative;
     width: 100%;
-    max-width: 200px;
-    margin: 0 auto;
   }
-  
-  .earnings-circle svg {
-    transform: rotate(-90deg);
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
   }
-  
-  .circle-trade, .circle-online, .circle-offline {
-    transition: stroke-dashoffset 1.5s ease-in-out;
+
+  .controls {
+    flex-direction: column;
+    align-items: flex-start;
   }
-  
-  .legend {
-    margin-top: 24px;
-  }
-  
-  .legend-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 8px;
-  }
-  
-  .dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-  }
-  
-  .dot.offline { background: #33cc33; }
-  .dot.online { background: #ff9933; }
-  .dot.trade { background: #0066ff; }
-  
-  /* Animations */
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  @keyframes slideIn {
-    from {
-      opacity: 0;
-      transform: translateX(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-  
-  .animate-line {
-    animation: drawLine 1.5s ease-out forwards;
-  }
-  
-  @keyframes drawLine {
-    from {
-      stroke-dasharray: 1000;
-      stroke-dashoffset: 1000;
-    }
-    to {
-      stroke-dasharray: 1000;
-      stroke-dashoffset: 0;
-    }
-  }
-  
-  .circle-trade.animate {
-    animation: drawCircle 1.5s ease-out forwards;
-  }
-  
-  .circle-online.animate {
-    animation: drawCircle 1.5s ease-out 0.3s forwards;
-  }
-  
-  .circle-offline.animate {
-    animation: drawCircle 1.5s ease-out 0.6s forwards;
-  }
-  
-  @keyframes drawCircle {
-    from {
-      stroke-dashoffset: 502;
-    }
-    to {
-      stroke-dashoffset: var(--final-offset, 100);
-    }
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 1200px) {
-    .analytics-container {
-      flex-direction: column;
-    }
-    
-    .earnings-section {
-      width: 100%;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .header {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 16px;
-    }
-    
-    .controls {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  }
+}
