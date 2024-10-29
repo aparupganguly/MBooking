@@ -1,3 +1,4 @@
+/* Keep all original desktop styles */
 .custom-sidebar {
   width: 300px;
   background-color: transparent;
@@ -25,12 +26,12 @@
   cursor: pointer;
   position: relative;
   transition: color 0.2s ease-in-out;
-  border-radius: 10px; /* Added for consistent border radius on hover */
+  border-radius: 10px;
 }
 
 .menu-item:hover {
   color: #4f55f1;
-  background-color: rgba(79, 85, 241, 0.1); /* Background stays within item */
+  background-color: rgba(79, 85, 241, 0.1);
 }
 
 .menu-item.active {
@@ -70,4 +71,82 @@
 
 .submenu-item:hover {
   color: #4f55f1;
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .custom-sidebar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-top: 1px solid #e0e0e0;
+    background-color: white;
+    z-index: 1000;
+    padding: 10px 0;
+    
+  }
+
+  .line {
+    display: none;
+  }
+
+  .menu-items {
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .menu-item {
+    flex-direction: column;
+    padding: 8px;
+    text-align: center;
+    border-radius: 0;
+  }
+
+  .menu-item.active::after {
+    display: none;
+  }
+
+  .menu-item.active {
+    position: relative;
+  }
+
+  .menu-item.active::before {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 4px;
+    background-color: #4f55f1;
+    border-radius: 50%;
+
+  }
+
+  .sideText {
+    margin: 4px 0 0 0;
+    font-size: 12px;
+  }
+
+  .chevron,
+  .submenu {
+    display: none;
+  }
+}
+
+/* Additional mobile optimizations */
+@media (max-width: 480px) {
+  .menu-item {
+    padding: 6px;
+  }
+
+  .sideText {
+    font-size: 10px;
+  }
 }

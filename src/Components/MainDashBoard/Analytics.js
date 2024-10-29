@@ -25,7 +25,6 @@ const CustomizedActiveDot = ({ cx, cy, cz }) => (
     <rect
       x={cx - 30}
       y={0}
-      z={cz - 1}
       width='60'
       height='400'
       fill='#e8f0fe'
@@ -46,18 +45,18 @@ const EventsAnalytics = () => {
   const [selectedPeriod, setSelectedPeriod] = useState("Monthly");
 
   const data = [
-    { name: "Jan", offline: 20, online: 35, price: 285000 },
-    { name: "Feb", offline: 25, online: 32, price: 248000 },
-    { name: "Mar", offline: 55, online: 45, price: 252000 },
-    { name: "Apr", offline: 45, online: 65, price: 159492 },
-    { name: "May", offline: 40, online: 62, price: 357000 },
-    { name: "Jun", offline: 42, online: 58, price: 255000 },
-    { name: "Jul", offline: 65, online: 48, price: 158000 },
-    { name: "Aug", offline: 42, online: 58, price: 235000 },
-    { name: "Sep", offline: 65, online: 48, price: 58000 },
-    { name: "Oct", offline: 65, online: 48, price: 158000 },
-    { name: "Nov", offline: 65, online: 48, price: 158000 },
-    { name: "Nov", offline: 65, online: 48, price: 185000 },
+    { name: "Jan", offline: 220, online: 335, price: 2000 },
+    { name: "Feb", offline: 125, online: 332, price: 2000 },
+    { name: "Mar", offline: 255, online: 425, price: 2200 },
+    { name: "Apr", offline: 145, online: 165, price: 924 },
+    { name: "May", offline: 240, online: 622, price: 700 },
+    { name: "Jun", offline: 342, online: 528, price: 560 },
+    { name: "Jul", offline: 645, online: 728, price: 270 },
+    { name: "Aug", offline: 242, online: 528, price: 550 },
+    { name: "Sep", offline: 165, online: 418, price: 560 },
+    { name: "Oct", offline: 625, online: 1000, price: 850 },
+    { name: "Nov", offline: 165, online: 1248, price: 1250 },
+    { name: "Dec", offline: 165, online: 148, price: 2180 },
   ];
   const totalPrice = data.reduce(
     (accumulator, current) => accumulator + current.price,
@@ -221,7 +220,7 @@ const EventsAnalytics = () => {
             <CartesianGrid
               // strokeDasharray="1"
               vertical={false}
-              // stroke="#f0f0f0"
+            // stroke="#f0f0f0"
             />
             <XAxis
               dataKey='name'
@@ -251,18 +250,18 @@ const EventsAnalytics = () => {
               stroke='#ff9933'
               strokeWidth={2}
               dot={false}
-              // activeDot={<CustomizedActiveDot />}
+              activeDot={<CustomizedActiveDot />}
               className='animate-line'
             />
-            <Line
+            {/* <Line
               type='monotone'
               dataKey='offline'
               stroke='#33cc33'
               strokeWidth={2}
               dot={false}
-              // activeDot={<CustomizedActiveDot />}
+              activeDot={<CustomizedActiveDot />}
               className='animate-line'
-            />
+            /> */}
           </LineChart>
         </div>
       </div>

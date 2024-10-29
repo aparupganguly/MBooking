@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { gsap } from "gsap";
 import "../../Styles/Navbar.css";
 import SearchBar from "../Navbar/SearchBar";
@@ -9,6 +9,9 @@ import logo from "../../Assets/NavBar/logo.svg";
 import pfp from "../../Assets/NavBar/pfp.png";
 
 const Navbar = () => {
+
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const bellIconRef = useRef(null);
 
   const handleMouseEnter = () => {
@@ -23,10 +26,17 @@ const Navbar = () => {
     <>
       <div className='NavbarContainer'>
         <img src={logo} alt='' className='logo' />
+        <button
+          className={`menu-button ${isMenuOpen ? 'open' : ''}`}
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
 
         <SearchBar />
-
-        <div className='rightButtons'>
+        <div className={`rightButtons ${isMenuOpen ? 'show' : ''}`}>
           <CreateButton />
           <DiscoverButton />
           <FavButton />
