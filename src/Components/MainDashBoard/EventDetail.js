@@ -9,6 +9,7 @@ import NumericStats from "../../Components/MainDashBoard/NumericStats";
 import Analytics from "../../Components/MainDashBoard/Analytics";
 import List from "../../Components/MainDashBoard/List";
 import SideBar from "../../Components/SideBar/Sidebar";
+import Navbar from "../../Components/Navbar/Navbar";
 
 const EventDetail = () => {
   const getStatusColor = (status) =>
@@ -66,6 +67,7 @@ const EventDetail = () => {
 
   return (
     <>
+      <Navbar />
       <div style={{ padding: "20px" }}>
 
         <div className='eventTopBtns'>
