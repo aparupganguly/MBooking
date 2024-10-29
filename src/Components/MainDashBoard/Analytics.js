@@ -5,7 +5,7 @@ import {
   XAxis,
   YAxis,
   Tooltip,
-  CartesianGrid,
+  CartesianGrid, ResponsiveContainer
 } from "recharts";
 import "../../Styles/Analytics.css";
 const CustomTooltip = ({ active, payload, label }) => {
@@ -212,57 +212,34 @@ const EventsAnalytics = () => {
           <div className='amount'> ${totalPrice}</div>
         </div>
         <div className='chart-container'>
-          <LineChart
-            width={800}
-            height={300}
-            data={data}
-            margin={{ top: 20, right: 30, left: 20, bottom: 20 }}>
-            <CartesianGrid
-              // strokeDasharray="1"
-              vertical={false}
-            // stroke="#f0f0f0"
-            />
-            <XAxis
-              dataKey='name'
-              stroke='#666'
-              axisLine={false}
-              tickLine={false}
-            />
-            <YAxis
-              stroke='#666'
-              axisLine={false}
-              tickLine={false}
-              tickCount={6}
-            />
-            <Tooltip content={<CustomTooltip />} cursor={false} />
-            <Line
-              type='monotone'
-              dataKey='price'
-              stroke='#0066ff'
-              strokeWidth={2}
-              dot={false}
-              activeDot={<CustomizedActiveDot />}
-              className='animate-line'
-            />
-            <Line
-              type='monotone'
-              dataKey='online'
-              stroke='#ff9933'
-              strokeWidth={2}
-              dot={false}
-              activeDot={<CustomizedActiveDot />}
-              className='animate-line'
-            />
-            {/* <Line
-              type='monotone'
-              dataKey='offline'
-              stroke='#33cc33'
-              strokeWidth={2}
-              dot={false}
-              activeDot={<CustomizedActiveDot />}
-              className='animate-line'
-            /> */}
-          </LineChart>
+          <ResponsiveContainer width="100%" height={300}>
+            <LineChart
+              data={data}
+              margin={{ top: 20, right: 30, left: 20, bottom: 20 }}>
+              <CartesianGrid vertical={false} />
+              <XAxis dataKey='name' stroke='#666' axisLine={false} tickLine={false} />
+              <YAxis stroke='#666' axisLine={false} tickLine={false} tickCount={6} />
+              <Tooltip content={<CustomTooltip />} cursor={false} />
+              <Line
+                type='monotone'
+                dataKey='price'
+                stroke='#0066ff'
+                strokeWidth={2}
+                dot={false}
+                activeDot={<CustomizedActiveDot />}
+                className='animate-line'
+              />
+              <Line
+                type='monotone'
+                dataKey='online'
+                stroke='#ff9933'
+                strokeWidth={2}
+                dot={false}
+                activeDot={<CustomizedActiveDot />}
+                className='animate-line'
+              />
+            </LineChart>
+          </ResponsiveContainer>
         </div>
       </div>
       <div className='earnings-section'>

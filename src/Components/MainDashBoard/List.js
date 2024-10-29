@@ -41,30 +41,39 @@ const List = () => {
       amount: 500,
       status: "Active",
     },
-
-
   ]);
 
-  const [dropdownOpen, setDropdownOpen] = useState({}); // Manage dropdown state for each booking
+  const [dropdownOpen, setDropdownOpen] = useState({});
 
   const handleRowClick = (eventName) => {
     const route = eventName.toLowerCase().replace(/ /g, "-");
-    navigate(`/event/${route}`); // Navigate to event detail page
+    navigate(`/event/${route}`);
   };
 
   const handleDelete = (id) => {
     const updatedBookings = bookings.filter((booking) => booking.id !== id);
-    setBookings(updatedBookings); // Update the state
+    setBookings(updatedBookings);
   };
 
   const toggleDropdown = (id) => {
     setDropdownOpen((prevState) => ({
       ...prevState,
-      [id]: !prevState[id], // Toggle dropdown for the specific booking
+      [id]: !prevState[id],
     }));
   };
 
-  const getStatusColor = (status) => (status === "Active" ? "green" : "orange");
+  const getStatusColor = (status) => {
+    switch (status) {
+      case "Active":
+        return "green";
+      case "On Delivery":
+        return "orange";
+      case "Finished":
+        return "grey";
+      default:
+        return "black";
+    }
+  };
 
   return (
     <div className='list-component'>
@@ -79,7 +88,7 @@ const List = () => {
         </div>
       </div>
       {bookings.length === 0 ? (
-        <p>No bookings to show.</p> // Message when there are no bookings
+        <p>No bookings to show.</p>
       ) : (
         <table>
           <thead>
@@ -96,63 +105,15 @@ const List = () => {
           </thead>
           <tbody>
             {bookings.map((booking) => (
-              <tr key={booking.id}
-              >
-                <td
-
-                  onClick={() => handleRowClick(booking.eventName)}
-                  style={{ cursor: "pointer" }}
-
-
-                >{booking.no}</td>
-                <td
-
-
-                  onClick={() => handleRowClick(booking.eventName)}
-                  style={{ cursor: "pointer" }}
-                >{booking.id}</td>
-                <td
-
-                  onClick={() => handleRowClick(booking.eventName)}
-                  style={{ cursor: "pointer" }}
-
-
-                >{booking.date}</td>
-                <td
-
-
-                  onClick={() => handleRowClick(booking.eventName)}
-                  style={{ cursor: "pointer" }}
-                >
-                  {booking.eventName}
-                </td>
-                <td
-
-
-                  onClick={() => handleRowClick(booking.eventName)}
-                  style={{ cursor: "pointer" }}
-                >{booking.location}</td>
-                <td
-
-
-
-                  onClick={() => handleRowClick(booking.eventName)}
-                  style={{ cursor: "pointer" }}>${booking.amount}</td>
-                <td
-
-                  onClick={() => handleRowClick(booking.eventName)}
-                  style={{ cursor: "pointer" }}
-
-                >
-                  <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      borderRadius: "8px",
-                      boxShadow: "0px 2px 10px 0px rgba(124, 141, 181, 0.12)",
-                      width: "fit-content",
-                      padding: "7px",
-                    }}>
+              <tr key={booking.id}>
+                <td onClick={() => handleRowClick(booking.eventName)}>{booking.no}</td>
+                <td onClick={() => handleRowClick(booking.eventName)}>{booking.id}</td>
+                <td onClick={() => handleRowClick(booking.eventName)}>{booking.date}</td>
+                <td onClick={() => handleRowClick(booking.eventName)}>{booking.eventName}</td>
+                <td onClick={() => handleRowClick(booking.eventName)}>{booking.location}</td>
+                <td onClick={() => handleRowClick(booking.eventName)}>${booking.amount}</td>
+                <td>
+                  <div className='status-indicator'>
                     <span
                       style={{
                         width: "10px",
@@ -166,14 +127,12 @@ const List = () => {
                 </td>
                 <td>
                   <div style={{ position: "relative" }}>
-                    <button
-                      className='listActionBtn'
-                      onClick={() => toggleDropdown(booking.id)}>
+                    <button className='listActionBtn' onClick={() => toggleDropdown(booking.id)}>
                       •••
                     </button>
                     {dropdownOpen[booking.id] && (
                       <div className='dropdown'>
-                        <button className="deleteBtn" onClick={() => handleDelete(booking.id)}>
+                        <button className='deleteBtn' onClick={() => handleDelete(booking.id)}>
                           Delete
                         </button>
                       </div>

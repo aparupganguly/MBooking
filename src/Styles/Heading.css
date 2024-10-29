@@ -5,9 +5,36 @@
   font-family: "Poppins-Medium";
   padding-bottom: 0.5em;
 }
+
 .userGuidelineText {
   font-size: 1em;
   line-height: 0;
   color: #7c8db5;
   padding-bottom: 0.5em;
+}
+
+/* Tablet (e.g., iPad) */
+@media (max-width: 1024px) {
+  .userWelcome {
+    font-size: 1.5em;
+  }
+
+  .userGuidelineText {
+    font-size: 0.9em;
+  }
+}
+
+/* Mobile (e.g., iPhone, smaller screens) */
+@media (max-width: 768px) {
+  .HeadingContainer {
+    padding-bottom: 1em;
+  }
+
+  .userWelcome {
+    font-size: 1.4em;
+  }
+
+  .userGuidelineText {
+    font-size: 0.85em;
+  }
 }

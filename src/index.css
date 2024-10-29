@@ -25,6 +25,7 @@ body {
   flex-direction: column; /* Stack items vertically */
   justify-content: flex-start; /* Align items to the top */
   height: 100%; /* Full height of parent */
+  
 }
 
 .content {
