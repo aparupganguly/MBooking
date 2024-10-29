@@ -106,8 +106,8 @@ const List = () => {
           <tbody>
             {bookings.map((booking) => (
               <tr key={booking.id}>
-                <td onClick={() => handleRowClick(booking.eventName)}>{booking.no}</td>
-                <td onClick={() => handleRowClick(booking.eventName)}>{booking.id}</td>
+                <td className="extraTableData" onClick={() => handleRowClick(booking.eventName)}>{booking.no}</td>
+                <td className="extraTableData" onClick={() => handleRowClick(booking.eventName)}>{booking.id}</td>
                 <td onClick={() => handleRowClick(booking.eventName)}>{booking.date}</td>
                 <td onClick={() => handleRowClick(booking.eventName)}>{booking.eventName}</td>
                 <td onClick={() => handleRowClick(booking.eventName)}>{booking.location}</td>
