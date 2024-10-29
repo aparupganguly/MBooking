@@ -116,11 +116,11 @@ const List = () => {
                   <div className='status-indicator'>
                     <span
                       style={{
-                        width: "10px",
-                        height: "10px",
-                        borderRadius: "50%",
+                        width: "12px",
+                        height: "12px",
+                        // borderRadius: "50%",
                         backgroundColor: getStatusColor(booking.status),
-                        marginRight: "0.5rem",
+                        // marginRight: "0.5rem",
                       }}></span>
                     {booking.status}
                   </div>

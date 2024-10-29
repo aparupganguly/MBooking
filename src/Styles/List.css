@@ -24,7 +24,7 @@ th {
 }
 
 tr:hover {
-  background-color: #f1f1f1;
+  background-color: #f8f8f8;
 }
 
 td {
@@ -56,6 +56,12 @@ td {
   align-items: center;
 }
 
+.status-indicator span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
 .listHeader {
   display: flex;
   justify-content: space-between;
@@ -72,45 +78,10 @@ td {
   cursor: pointer;
   padding-left: 2em;
 }
-
 .deleteBtn {
   background-color: white;
   padding: 0.7em;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .list-component {
-    padding: 10px;
-  }
-
-  th,
-  td {
-    padding: 8px;
-    font-size: 14px;
-  }
-
-  .listHeader {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .period-selector {
-    margin-top: 0.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  th,
-  td {
-    font-size: 12px;
-    padding: 6px;
-  }
-
-  .listActionBtn {
-    padding-left: 1em;
-  }
 }
