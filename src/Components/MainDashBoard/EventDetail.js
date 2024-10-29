@@ -2,8 +2,20 @@ import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import "../../Styles/EventDetail.css";
 import backBtn from "../../Assets/Events/backBt.svg";
+
+import "../../Styles/Heading.css";
+
+import NumericStats from "../../Components/MainDashBoard/NumericStats";
+import Analytics from "../../Components/MainDashBoard/Analytics";
+import List from "../../Components/MainDashBoard/List";
+
 const EventDetail = () => {
-  const getStatusColor = (status) => (status === "Active" ? "green" : "orange");
+  const getStatusColor = (status) =>
+    status === "Active"
+      ? "green"
+      : "orange" && status === "Finished"
+      ? "gray"
+      : "orange";
 
   const { eventName } = useParams();
   const navigate = useNavigate();
@@ -66,7 +78,6 @@ const EventDetail = () => {
             width: "fit-content",
             padding: "7px",
             border: "1px solid #0a0a0a",
-            
           }}>
           <span
             style={{
@@ -79,22 +90,30 @@ const EventDetail = () => {
           {booking.status}
         </div>
       </div>
-      <h2>Event : {booking.eventName.replace("-", " ")}</h2>
-      <p>
+      <p className='userWelcome'>
+        Event : {booking.eventName.replace("-", " ")}
+      </p>
+      <p className='userGuidelineText'>
+        Here is the information about all your events
+      </p>
+      {/* <p>
         <strong>No : </strong> {booking.no}
       </p>
       <p>
         <strong>Id : </strong> {booking.id}
+      </p> */}
+      <p>
+        <strong>Location :</strong> {booking.location}
       </p>
       <p>
-        <strong>Date :</strong> {booking.date}
+        <strong>Date : </strong> {booking.date}
       </p>
       <p>
-        <strong>Location : </strong> {booking.location}
+        <strong>Price : </strong>${booking.amount}
       </p>
-      <p>
-        <strong>Amount : </strong>${booking.amount}
-      </p>
+      <NumericStats />
+      <Analytics/>
+      <List/>
     </div>
   );
 };

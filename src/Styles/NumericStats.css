@@ -83,7 +83,7 @@
   }
   .metric-card {
     padding: 12px;
-    font-size: 12px;
+    font-size: 16px;
     border: none;
     border-bottom: 1px solid #e6edff;
   }
@@ -91,21 +91,21 @@
     margin-bottom: 10px;
   }
   .card-title {
-    font-size: 10px;
+    font-size: 14px;
   }
   .card-icon {
-    padding: 8px;
+    /* padding: 8px; */
     gap: 8px;
   }
   .metric-value {
-    font-size: 16px;
+    font-size: 20px;
   }
   .metric-stats {
     gap: 6px;
   }
   .stat-value,
   .stat-change {
-    font-size: 10px;
+    font-size: 12px;
   }
 }
 

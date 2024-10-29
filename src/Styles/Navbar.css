@@ -1,300 +1,300 @@
-.NavbarContainer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1em;
-  flex-wrap: wrap;
-  font-family: "Poppins-Regular";
-}
-.bell-icon {
-  position: relative;
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-}
-
-.bell-icon svg {
-  width: 100%;
-  height: 100%;
-  transition: transform 0.3s ease;
-}
-
-/* Red notification dot */
-.bell-icon::after {
-  content: "";
-  position: absolute;
-  top: -2px;
-  right: -2px;
-  width: 8px;
-  height: 8px;
-  background-color: red;
-  border-radius: 50%;
-  transform: scale(1);
-  transition: transform 0.3s ease-in-out;
-}
-
-/* Hover effect */
-.bell-icon:hover::after {
-  transform: scale(1.3);
-}
-
-.bell-icon:hover svg {
-  animation: shake 0.3s ease-in-out both;
-}
-
-/* Shake keyframes */
-@keyframes shake {
-  0%,
-  100% {
-    transform: translateX(0);
-  }
-  20%,
-  60% {
-    transform: translateX(-2px);
-  }
-  40%,
-  80% {
-    transform: translateX(2px);
-  }
-}
-
-/* Animation on hover */
-.bell-icon:hover::after {
-  transform: scale(1.3);
-}
-
-.rightButtons {
-  display: flex;
-  gap: 1em;
-  align-items: center;
-}
-
-.hamburger.open span:nth-child(1) {
-  transform: rotate(45deg) translateY(8px);
-}
-
-.hamburger.open span:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger.open span:nth-child(3) {
-  transform: rotate(-45deg) translateY(-8px);
-}
-
-.menuItems {
-  display: flex;
-  gap: 3.3em;
-  align-items: center;
-}
-
-.menuItems.show {
-  display: block;
-}
-
-@media (max-width: 768px) {
-  .hamburger {
-    display: flex;
-  }
-
-  .menuItems {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    padding: 1em;
-    background: #fff;
-    position: absolute;
-    top: 60px;
-    left: 0;
-  }
-
-  .menuItems.show {
-    display: flex;
-  }
-
-  .logo,
-  .pfp {
-    width: 9em;
-  }
-}
-
-hr {
-  border: 1px solid #e9e9ea;
-  width: 100%;
-  padding: 0 auto !important;
-}
-
-/* FavBtn */
-
-.favorites-button {
-  display: flex;
-  align-items: center;
-  font-size: 16px;
-  background-color: transparent;
-  border-radius: 10px;
-  border: 1px solid rgba(48, 50, 55, 0.15);
-  padding: 9px 16px 6px 9px;
-  gap: 12px;
-  font-family: "Poppins-Regular";
-  line-height: 0;
-}
-/* FavBtn */
-
-/* SearchBar */
-
-.search-bar {
-  flex-shrink: 0;
-  border-radius: 10px;
-  border: 1px solid #e9e9e9;
-  background: #fff;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  border: 1px solid #e0e0e0;
-  border-radius: 10px;
-  overflow: hidden;
-  width: 35em;
-}
-.search-icon {
-  width: 24px;
-  height: 24px;
-  flex-shrink: 0;
-  padding: 10px;
-}
-.search-input {
-  flex: 1;
-  border: none;
-  outline: none;
-  padding: 10px;
-  font-size: 16px;
-  color: #333;
-  font-family: "Poppins-Regular";
-  line-height: 0;
-}
-
-.search-input::placeholder {
-  color: #aaa;
-  line-height: 0;
-}
-
-.search-button {
-  background-color: #4f55f1;
-  color: white;
-  padding: 10px 16px;
-  border: none;
-  font-size: 16px;
-  cursor: pointer;
-  font-family: "Poppins-Regular";
-}
-.search-button:hover {
-  background-color: #3137ed;
-}
-/*SearchBar */
-/* Add these mobile-specific styles to your existing Navbar.css */
-
-@media (max-width: 768px) {
   .NavbarContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em;
+    flex-wrap: wrap;
+    font-family: "Poppins-Regular";
+  }
+  .bell-icon {
     position: relative;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+  }
+
+  .bell-icon svg {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease;
+  }
+
+  /* Red notification dot */
+  .bell-icon::after {
+    content: "";
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 8px;
+    height: 8px;
+    background-color: red;
+    border-radius: 50%;
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  /* Hover effect */
+  .bell-icon:hover::after {
+    transform: scale(1.3);
+  }
+
+  .bell-icon:hover svg {
+    animation: shake 0.3s ease-in-out both;
+  }
+
+  /* Shake keyframes */
+  @keyframes shake {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    20%,
+    60% {
+      transform: translateX(-2px);
+    }
+    40%,
+    80% {
+      transform: translateX(2px);
+    }
+  }
+
+  /* Animation on hover */
+  .bell-icon:hover::after {
+    transform: scale(1.3);
   }
 
   .rightButtons {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: white;
-    padding: 1rem;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-
-  .rightButtons.show {
     display: flex;
+    gap: 1em;
+    align-items: center;
   }
 
-  /* Hamburger menu button */
-  .menu-button {
-    display: block;
-    width: 30px;
-    height: 30px;
-    position: relative;
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
+  .hamburger.open span:nth-child(1) {
+    transform: rotate(45deg) translateY(8px);
   }
 
-  .menu-button span {
-    display: block;
-    width: 100%;
-    height: 2px;
-    background: #000;
-    position: absolute;
-    left: 0;
-    transition: all 0.3s ease;
-  }
-
-  .menu-button span:first-child {
-    top: 8px;
-  }
-
-  .menu-button span:nth-child(2) {
-    top: 16px;
-  }
-
-  .menu-button span:last-child {
-    top: 24px;
-  }
-
-  /* Hamburger menu open state */
-  .menu-button.open span:first-child {
-    transform: rotate(45deg);
-    top: 16px;
-  }
-
-  .menu-button.open span:nth-child(2) {
+  .hamburger.open span:nth-child(2) {
     opacity: 0;
   }
 
-  .menu-button.open span:last-child {
-    transform: rotate(-45deg);
-    top: 16px;
+  .hamburger.open span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-8px);
   }
 
-  /* Adjust search bar for mobile */
-  .search-bar {
+  .menuItems {
+    display: flex;
+    gap: 3.3em;
+    align-items: center;
+  }
+
+  .menuItems.show {
+    display: block;
+  }
+
+  @media (max-width: 768px) {
+    .hamburger {
+      display: flex;
+    }
+
+    .menuItems {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      padding: 1em;
+      background: #fff;
+      position: absolute;
+      top: 60px;
+      left: 0;
+    }
+
+    .menuItems.show {
+      display: flex;
+    }
+
+    .logo,
+    .pfp {
+      width: 9em;
+    }
+  }
+
+  hr {
+    border: 1px solid #e9e9ea;
     width: 100%;
-    margin: 1rem 0;
-    order: 3;
+    padding: 0 auto !important;
   }
 
-  /* Hide logo text if needed */
-  .logo {
-    max-width: 120px;
-  }
+  /* FavBtn */
 
-  /* Adjust profile picture size */
-  .pfp {
-    width: 35px;
-    height: 35px;
-  }
-
-  /* Adjust bell icon position */
-  .bell-icon {
-    margin-right: 1rem;
-  }
-
-  /* Make the favorites button full width in mobile menu */
   .favorites-button {
-    width: 100%;
-    justify-content: flex-start;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    background-color: transparent;
+    border-radius: 10px;
+    border: 1px solid rgba(48, 50, 55, 0.15);
+    padding: 9px 16px 6px 9px;
+    gap: 12px;
+    font-family: "Poppins-Regular";
+    line-height: 0;
   }
-}
+  /* FavBtn */
 
-/* Hide menu button on desktop */
-.menu-button {
-  display: none;
-}
+  /* SearchBar */
+
+  .search-bar {
+    flex-shrink: 0;
+    border-radius: 10px;
+    border: 1px solid #e9e9e9;
+    background: #fff;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 35em;
+  }
+  .search-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    padding: 10px;
+  }
+  .search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+    font-family: "Poppins-Regular";
+    line-height: 0;
+  }
+
+  .search-input::placeholder {
+    color: #aaa;
+    line-height: 0;
+  }
+
+  .search-button {
+    background-color: #4f55f1;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: "Poppins-Regular";
+  }
+  .search-button:hover {
+    background-color: #3137ed;
+  }
+  /*SearchBar */
+  /* Add these mobile-specific styles to your existing Navbar.css */
+
+  @media (max-width: 768px) {
+    .NavbarContainer {
+      position: relative;
+    }
+
+    .rightButtons {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background: white;
+      padding: 1rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .rightButtons.show {
+      display: flex;
+    }
+
+    /* Hamburger menu button */
+    .menu-button {
+      display: block;
+      width: 30px;
+      height: 30px;
+      position: relative;
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+    }
+
+    .menu-button span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: #000;
+      position: absolute;
+      left: 0;
+      transition: all 0.3s ease;
+    }
+
+    .menu-button span:first-child {
+      top: 8px;
+    }
+
+    .menu-button span:nth-child(2) {
+      top: 16px;
+    }
+
+    .menu-button span:last-child {
+      top: 24px;
+    }
+
+    /* Hamburger menu open state */
+    .menu-button.open span:first-child {
+      transform: rotate(45deg);
+      top: 16px;
+    }
+
+    .menu-button.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-button.open span:last-child {
+      transform: rotate(-45deg);
+      top: 16px;
+    }
+
+    /* Adjust search bar for mobile */
+    .search-bar {
+      width: 100%;
+      margin: 1rem 0;
+      order: 3;
+    }
+
+    /* Hide logo text if needed */
+    .logo {
+      max-width: 120px;
+    }
+
+    /* Adjust profile picture size */
+    .pfp {
+      width: 35px;
+      height: 35px;
+    }
+
+    /* Adjust bell icon position */
+    .bell-icon {
+      margin-right: 1rem;
+    }
+
+    /* Make the favorites button full width in mobile menu */
+    .favorites-button {
+      width: 100%;
+      justify-content: flex-start;
+    }
+  }
+
+  /* Hide menu button on desktop */
+  .menu-button {
+    display: none;
+  }

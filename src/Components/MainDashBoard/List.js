@@ -118,7 +118,7 @@ const List = () => {
                       style={{
                         width: "12px",
                         height: "12px",
-                        // borderRadius: "50%",
+                        borderRadius: "50%",
                         backgroundColor: getStatusColor(booking.status),
                         // marginRight: "0.5rem",
                       }}></span>

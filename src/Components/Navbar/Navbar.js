@@ -41,7 +41,15 @@ const Navbar = () => {
           <DiscoverButton />
           <FavButton />
         </div>
-
+        <button
+          className={`menu-button ${isMenuOpen ? 'open' : ''}`}
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
         <div
           className='bell-icon'
           ref={bellIconRef}
