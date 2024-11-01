@@ -24,13 +24,8 @@ const Navbar = () => {
     <>
       <div className="NavbarContainer">
         <img src={logo} alt="logo" className="logo" />
-        <button
-          className={`menu-button ${isMenuOpen ? "open" : ""}`}
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
+        <button className={`menu-button ${isMenuOpen ? "open" : ""}`} onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <div className="icon"></div>
         </button>
 
         <SearchBar />
