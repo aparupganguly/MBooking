@@ -186,7 +186,7 @@ const EventsAnalytics = () => {
   return (
     <div className='analytics-container'>
       <div className='chart-section'>
-        <div className='header'>
+        <div className='AnalysisHeader'>
           <h2>Events Analytics</h2>
           <div className='controls'>
             <div className='legend-container'>
