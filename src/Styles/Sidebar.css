@@ -30,12 +30,12 @@
 }
 
 .menu-item:hover {
-  color: #4f55f1;
+  color: var(--btnPrimaryAcc);
   background-color: rgba(79, 85, 241, 0.1);
 }
 
 .menu-item.active {
-  color: #4f55f1;
+  color: var(--btnPrimaryAcc);
 }
 
 .menu-item.active::after {
@@ -45,7 +45,7 @@
   top: 15%;
   bottom: 15%;
   width: 4px;
-  background-color: #4f55f1;
+  background-color: var(--btnPrimaryAcc);
   border-radius: 5px;
 }
 
@@ -70,7 +70,7 @@
 }
 
 .submenu-item:hover {
-  color: #4f55f1;
+  color: var(--btnPrimaryAcc);
 }
 
 /* Mobile responsive styles */
@@ -84,10 +84,10 @@
     height: auto;
     border-right: none;
     border-top: 1px solid #e0e0e0;
-    background-color: white;
+    background-color: transparent;
     z-index: 1000;
     padding: 10px 0;
-    
+    background-color: var(--bgColor);
   }
 
   .line {
@@ -124,9 +124,8 @@
     transform: translateX(-50%);
     width: 4px;
     height: 4px;
-    background-color: #4f55f1;
+    background-color: var(--btnPrimaryAcc);
     border-radius: 50%;
-
   }
 
   .sideText {

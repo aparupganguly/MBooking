@@ -1,36 +1,43 @@
-*{
+* {
   -webkit-user-drag: none;
+}
+
+:root {
+  --bgColor: #ffffff;
+  --headingTextColor: #313338;
+  --secondaryTextColor: #7c8db5;
+  --btnPrimaryAcc: #4f55f1;
+  --boxShadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
 body {
   overflow-x: hidden;
   font-family: "Poppins-Regular";
+  background-color: var(--bgColor);
 }
 .app-container {
-  display: flex; /* Use flexbox for the main layout */
-  flex-direction: column; /* Stack Navbar and main container vertically */
-  height: 100vh; /* Full viewport height */
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 .main-container {
-  display: flex; /* Align Sidebar and content in a row */
-  flex: 1; /* Take remaining space */
+  display: flex;
+  flex: 1;
 }
 
 .custom-sidebar {
-  width: 250px; /* Fixed width for sidebar */
-  background-color: #f8f9fa; /* Example background color */
-  color: gray; /* Default text color */
+  width: 250px;
+  color: var(--secondaryTextColor);
   display: flex;
-  flex-direction: column; /* Stack items vertically */
-  justify-content: flex-start; /* Align items to the top */
-  height: 100%; /* Full height of parent */
-  
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
 }
 
 .content {
-  flex: 1; /* Take remaining space next to the sidebar */
-  padding: 20px; /* Add padding for content */
+  flex: 1;
+  padding: 20px;
 }
 
 ::-webkit-scrollbar {

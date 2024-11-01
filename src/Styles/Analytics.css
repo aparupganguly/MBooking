@@ -23,7 +23,7 @@
 .header h2 {
   font-size: 20px;
   font-weight: 600;
-  color: #333;
+  color: var(--headingTextColor);
   margin: 0;
 }
 
@@ -58,7 +58,7 @@
   border-radius: 6px;
   height: 30px;
   width: 8em;
-  color: #333;
+  color: var(--headingTextColor);
   font-family: "Poppins-Regular";
 }
 
@@ -66,7 +66,7 @@
   border: none;
   background: none;
   font-size: 20px;
-  color: #666;
+  color: var(--headingTextColor);
   cursor: pointer;
 }
 
@@ -75,14 +75,14 @@
 }
 
 .date {
-  color: #666;
+  color: var(--secondaryTextColor);
   font-size: 14px;
 }
 
 .amount {
   font-size: 24px;
   font-weight: 600;
-  color: #333;
+  color: var(--headingTextColor);
 }
 
 /* Chart Container */
@@ -95,24 +95,24 @@
   background: transparent;
   border-radius: 4px;
   padding: 8px 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--boxShadow);
   border: 1px solid #f0f0f0;
 }
 
 .tooltip-date {
-  color: #666;
+  color: var(--secondaryTextColor);
   font-size: 12px;
   margin: 0;
 }
 
 .tooltip-price {
-  color: #333;
+  color: var(--headingTextColor);
+
   font-size: 16px;
   font-weight: 600;
   margin: 4px 0 0 0;
 }
 
-/* Hover Bar */
 .hover-bar {
   opacity: 0;
   transition: opacity 0.2s ease;
@@ -122,7 +122,6 @@
   opacity: 1;
 }
 
-/* Earnings Section */
 .earnings-section {
   width: 300px;
   animation: slideIn 0.8s ease-out;
@@ -131,17 +130,11 @@
   border: 1px solid var(--Border, #e6edff);
 }
 
-/* .earnings-section h2 {
-  font-size: 20px;
-  font-weight: 600;
-  color: #333;
-  margin: 0 0 24px 0;
-} */
+
 
 .earnings-circle {
   position: relative;
   width: 100%;
-  /* max-width: 200px; */
   margin: 0 auto;
 }
 
@@ -305,7 +298,7 @@
 
 @media (max-width: 768px) {
   .chart-container {
-    max-width: 100%; /* Full width on mobile */
-    margin: 0 auto; /* Center on mobile */
+    max-width: 100%; 
+    margin: 0 auto; 
   }
 }

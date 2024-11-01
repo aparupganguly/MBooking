@@ -1,7 +1,7 @@
 .userWelcome {
   font-size: 2em;
   line-height: 0;
-  color: #313338;
+  color: var(--headingTextColor);
   font-family: "Poppins-Medium";
   padding-bottom: 0.5em;
 }
@@ -9,7 +9,7 @@
 .userGuidelineText {
   font-size: 1em;
   line-height: 0;
-  color: #7c8db5;
+  color: var(--secondaryTextColor);
   padding-bottom: 0.5em;
 }
 
