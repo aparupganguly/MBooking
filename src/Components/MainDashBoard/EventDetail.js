@@ -101,12 +101,6 @@ const EventDetail = () => {
         <p className='userGuidelineText'>
           Here is the information about all your events
         </p>
-        {/* <p>
-        <strong>No : </strong> {booking.no}
-      </p>
-      <p>
-        <strong>Id : </strong> {booking.id}
-      </p> */}
         <p>
           <strong>Location :</strong> {booking.location}
         </p>

@@ -5,6 +5,9 @@
   padding: 1em;
   flex-wrap: wrap;
   font-family: "Poppins-Regular";
+
+
+  
 }
 .bell-icon {
   position: relative;
@@ -190,38 +193,46 @@ hr {
 /*SearchBar */
 
 @media (max-width: 768px) {
+  /* Navbar Container */
   .NavbarContainer {
-    position: relative;
-  }
-
-  .rightButtons {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    padding: 1rem;
-    box-shadow: var(--boxShadow);
-    z-index: 1000;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-
-  .rightButtons.show {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em;
+    width: 100%;
+    position: relative;
+    font-family: "Poppins-Regular";
   }
 
-  /* Hamburger menu button */
-  .menu-button {
-    display: block;
-    width: 30px;
-    height: 30px;
+  /* Logo */
+  .logo {
+    max-width: 100px;
+  }
+
+  /* Bell Icon */
+  .bell-icon {
+    margin-right: 1rem;
     position: relative;
+    width: 24px;
+    height: 24px;
+  }
+
+  /* Profile Picture */
+  .pfp {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+  }
+
+  /* Hamburger Menu */
+  .menu-button {
+    display: flex;
+    height: 24px;
     background: none;
     border: none;
-    padding: 0;
     cursor: pointer;
+    z-index: 1001;
+
   }
 
   .menu-button span {
@@ -235,21 +246,21 @@ hr {
   }
 
   .menu-button span:first-child {
-    top: 8px;
+    top: 6px;
   }
 
   .menu-button span:nth-child(2) {
-    top: 16px;
+    top: 12px;
   }
 
   .menu-button span:last-child {
-    top: 24px;
+    top: 18px;
   }
 
-  /* Hamburger menu open state */
+  /* Transform menu icon to X on open */
   .menu-button.open span:first-child {
     transform: rotate(45deg);
-    top: 16px;
+    top: 12px;
   }
 
   .menu-button.open span:nth-child(2) {
@@ -258,34 +269,74 @@ hr {
 
   .menu-button.open span:last-child {
     transform: rotate(-45deg);
-    top: 16px;
+    top: 12px;
   }
 
+  /* Menu Items */
+  .menuItems {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    background: #fff;
+    width: 100%;
+    padding: 1em;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+
+  .menuItems.show {
+    display: flex;
+  }
+
+  /* Right Buttons Container */
+  .rightButtons {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem 0;
+    gap: 1rem;
+  }
+
+  .rightButtons.show {
+    display: flex;
+  }
+
+  /* Search Bar */
   .search-bar {
     width: 100%;
     margin: 1rem 0;
-    order: 3;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
   }
 
-  .logo {
-    max-width: 120px;
+  .search-icon {
+    width: 24px;
+    padding: 10px;
   }
 
-  .pfp {
-    width: 35px;
-    height: 35px;
+  .search-input {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    outline: none;
   }
 
-  .bell-icon {
-    margin-right: 1rem;
-  }
-
-  .favorites-button {
-    width: 100%;
-    justify-content: flex-start;
+  .search-button {
+    background-color: #3137ed;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
   }
 }
-
 .menu-button {
   display: none;
 }

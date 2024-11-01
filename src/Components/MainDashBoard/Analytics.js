@@ -65,7 +65,6 @@ const EventsAnalytics = () => {
   const CircularProgress = () => (
     <div className='earnings-circle'>
       <svg viewBox='0 0 200 200'>
-        {/* Define the linear gradients */}
         <defs>
           {/* Gradient for the blue circle */}
           <linearGradient id='blueGradient' x1='0%' y1='0%' x2='100%' y2='100%'>
@@ -131,10 +130,10 @@ const EventsAnalytics = () => {
           cy='100'
           r='90'
           fill='none'
-          stroke='url(#blueGradient)' // Reference the blue gradient
+          stroke='url(#blueGradient)' 
           strokeWidth='10'
           strokeDasharray='502'
-          strokeDashoffset='100' // Adjust this value to animate visibility
+          strokeDashoffset='100' 
           className='circle-trade animate'
           strokeLinecap='round'
         />
@@ -145,10 +144,10 @@ const EventsAnalytics = () => {
           cy='100'
           r='60'
           fill='none'
-          stroke='url(#orangeGradient)' // Reference the orange gradient
+          stroke='url(#orangeGradient)' 
           strokeWidth='10'
           strokeDasharray='502'
-          strokeDashoffset='100' // Adjust this value for partial visibility
+          strokeDashoffset='100' 
           className='circle-online animate'
           strokeLinecap='round'
         />
@@ -159,10 +158,10 @@ const EventsAnalytics = () => {
           cy='100'
           r='40'
           fill='none'
-          stroke='url(#greenGradient)' // Reference the green gradient
+          stroke='url(#greenGradient)' 
           strokeWidth='10'
           strokeDasharray='502'
-          strokeDashoffset='200' // Adjust this value for partial visibility
+          strokeDashoffset='200' 
           className='circle-offline animate'
           strokeLinecap='round'
         />

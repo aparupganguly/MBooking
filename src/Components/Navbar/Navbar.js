@@ -9,8 +9,6 @@ import logo from "../../Assets/NavBar/logo.svg";
 import pfp from "../../Assets/NavBar/pfp.png";
 
 const Navbar = () => {
-
-
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const bellIconRef = useRef(null);
 
@@ -24,10 +22,10 @@ const Navbar = () => {
 
   return (
     <>
-      <div className='NavbarContainer'>
-        <img src={logo} alt='' className='logo' />
+      <div className="NavbarContainer">
+        <img src={logo} alt="logo" className="logo" />
         <button
-          className={`menu-button ${isMenuOpen ? 'open' : ''}`}
+          className={`menu-button ${isMenuOpen ? "open" : ""}`}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           <span></span>
@@ -36,22 +34,15 @@ const Navbar = () => {
         </button>
 
         <SearchBar />
-        <div className={`rightButtons ${isMenuOpen ? 'show' : ''}`}>
+
+        <div className={`rightButtons ${isMenuOpen ? "show" : ""}`}>
           <CreateButton />
           <DiscoverButton />
           <FavButton />
         </div>
-        <button
-          className={`menu-button ${isMenuOpen ? 'open' : ''}`}
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+
         <div
-          className='bell-icon'
+          className="bell-icon"
           ref={bellIconRef}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
@@ -71,7 +62,7 @@ const Navbar = () => {
           </svg>
         </div>
 
-        <img src={pfp} alt='pfp' className='pfp' />
+        <img src={pfp} alt="profile" className="pfp" />
       </div>
       <hr />
     </>
